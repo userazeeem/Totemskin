@@ -16,7 +16,7 @@
 
 ## Overview
 
-Totem Skin replaces the look of the Totem of Undying with a custom animated character. The totem sways and hops wherever you see it, in your hands, in your inventory, on the ground and in item frames.
+Totem Skin replaces the look of the Totem of Undying with a custom pixel-art character. It shows up wherever you see the totem, in your hands, in your inventory, on the ground and in item frames.
 
 It changes only how the item looks. Nothing about how the totem works is touched, so it is safe to use on any server.
 
@@ -29,9 +29,8 @@ It changes only how the item looks. Nothing about how the totem works is touched
 - Shows in the inventory, chests and every other item slot
 - Shows on the ground when the totem is dropped
 - Shows in item frames
-- Animated dance made of 24 frames, with sway, hop and squash and stretch
 - Client-side only, with no gameplay changes
-- Pixel art kept sharp, with no blurring between frames
+- Pixel art kept sharp, with no blurring
 
 ---
 
@@ -59,7 +58,7 @@ The `mods` folder on Windows is found at `%appdata%\.minecraft\mods`.
 
 ## How It Works
 
-Totem Skin is built on item model definitions and an animated texture. No code is needed to change the look.
+Totem Skin is built on item model definitions and a single texture. No code is needed to change the look.
 
 ```
 assets/
@@ -70,30 +69,14 @@ assets/
     models/item/
       totem_offhand.json           size and position for each view
     textures/item/
-      totem_offhand.png            animation frames, stacked vertically
-      totem_offhand.png.mcmeta     animation speed
+      totem_offhand.png            the custom texture
 ```
 
-The item definition selects the custom model for each display context: both hands in first and third person, the inventory, the ground and item frames. The model file sets the scale and position for each view. The texture is a tall strip of 128 by 128 frames, and the `.mcmeta` file tells the game to play them in order.
+The item definition selects the custom model for each display context: both hands in first and third person, the inventory, the ground and item frames. The model file sets the scale and position for each view. The texture is a single 128 by 128 transparent PNG.
 
 ---
 
 ## Customising
-
-### Change the animation speed
-
-Edit `totem_offhand.png.mcmeta`:
-
-```json
-{
-  "animation": {
-    "frametime": 2,
-    "interpolate": false
-  }
-}
-```
-
-A lower `frametime` plays faster, and a higher one plays slower.
 
 ### Change the size or position
 
@@ -101,7 +84,7 @@ Edit the `display` block in `totem_offhand.json`. For each view, `translation` m
 
 ### Use your own image
 
-Replace `totem_offhand.png` with your own transparent PNG. For a still image, use a single square frame and delete the `.mcmeta` file. For an animation, stack square frames from top to bottom.
+Replace `totem_offhand.png` with your own transparent, square PNG.
 
 ---
 
@@ -110,8 +93,8 @@ Replace `totem_offhand.png` with your own transparent PNG. For a still image, us
 Clone the repository and run the build from the project folder.
 
 ```
-git clone https://github.com/userazeeem/Totemskin.git
-cd Totemskin
+git clone https://github.com/YOUR_USERNAME/totemskin.git
+cd totemskin
 .\gradlew build
 ```
 
