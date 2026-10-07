@@ -110,8 +110,8 @@ Replace `totem_offhand.png` with your own transparent PNG. For a still image, us
 Clone the repository and run the build from the project folder.
 
 ```
-git clone https://github.com/YOUR_USERNAME/totemskin.git
-cd totemskin
+git clone https://github.com/userazeeem/Totemskin.git
+cd Totemskin
 .\gradlew build
 ```
 
