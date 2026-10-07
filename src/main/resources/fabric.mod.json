@@ -1,0 +1,27 @@
+{
+	"schemaVersion": 1,
+	"id": "totemskin",
+	"version": "${version}",
+	"name": "Totem Skin",
+	"description": "Replaces the look of the Totem of Undying in your off hand with a custom image.",
+	"authors": [
+		"Mohammed Azeem"
+	],
+	"license": "MIT",
+	"icon": "assets/totemskin/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			"com.example.TotemSkin"
+		],
+		"client": [
+			"com.example.client.TotemSkinClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
